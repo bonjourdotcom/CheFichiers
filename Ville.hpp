@@ -3,21 +3,24 @@
 
 #include <iostream>
 #include <stdio.h>
-
-using namespace std;
+#include <string>
+#include <unordered_set>
 
 class Ville
 {
-public:
-	string _nom;
+private
+	std::string _nom;
 	int _population;
-	string _type;
+	std::string _type;
 	bool _retrouvailles;
 	
-	Ville *_reliees[4];
+	std::unordered_set<Ville*> m_villesReliees;
 	
+public :
 	Ville();
 	~Ville();
+	
+	void ajouterVilleReliee(Ville *v) { m_villesReliees.insert(v); }
 };
 
 #endif

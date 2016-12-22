@@ -10,7 +10,7 @@ using namespace std;
 class Joueur
 {
 	
-public:
+private:
 	Ville *_ville;
 	Ville *_derniereVille;
 	
@@ -21,6 +21,7 @@ public:
 	
 	Membre _membres[10];
 	
+public:
 	Joueur();
 	~Joueur();
 	void AfficherMembres();
