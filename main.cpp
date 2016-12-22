@@ -10,6 +10,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
+	cout << "Branche de Charles\n";
 	srand((unsigned int)time(0));
 	
 	Partie nouvellePartie;
