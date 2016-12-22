@@ -20,6 +20,15 @@ public :
 	Ville();
 	~Ville();
 	
+	//utilisation :
+	// Ville a(...), ville b(...);
+	//..
+	// a.ajouterVilleReliee(&b);
+	// 
+	// faire le tour des villes reliées
+	// for(auto i = m_villesReliees.begin(); i != m_villesReliees.end(); i++)
+	//	cout << *i.nom();
+	
 	void ajouterVilleReliee(Ville *v) { m_villesReliees.insert(v); }
 };
 
