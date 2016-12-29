@@ -4,9 +4,20 @@
 #include "Ville.hpp"
 #include "Membre.hpp"
 
+using namespace std;
+
 Partie::Partie()
 {
-	
+	for (int i = 0; i < 56; i++)
+	{
+		_villesPays[i]._nom = _infoArgentine[i][0];
+		_villesPays[i]._population = stoi(_infoArgentine[i][1]);
+		
+		for (int j = 0; j < 4; j++)
+		{
+			//_villesPays[i]._reliees[j] = _infoArgentine[i][j];
+		}
+	}
 }
 
 Partie::~Partie()
@@ -16,7 +27,7 @@ Partie::~Partie()
 
 void Partie::CommencerPartie()
 {
-	_joueur._ville = &_villesArgentine[0];
+	_joueur._ville = &_villesPays[0];
 	
 	cout << "Argent: " << _joueur._argent << endl << endl;
 	_joueur.AfficherMembres();
@@ -28,13 +39,13 @@ void Partie::CommencerPartie()
 	{
 		n = _joueur.CompterMembres();
 		
-		aRations = rand() % 30;
+		aRations = rand() % 50;
 		aMunnitions = rand() % 100;
 		aPetrole = rand() % 50;
 		
-		pRations = (rand() % 8 + 1);
-		pMunnitions = (rand() % 5 + 1);
-		pPetrole = (rand() % 2 + 0.5);
+		pRations = ((rand() + 1) % 80) / 10;
+		pMunnitions = ((rand() + 1) % 50) / 10;
+		pPetrole = ((rand() + 1) % 20) / 10;
 		
 		do
 		{
@@ -55,11 +66,12 @@ void Partie::CommencerPartie()
 					_joueur._argent += h * s;
 					
 					cout << "Votre groupe a travaille " << h << " heures au total dans des etablissements locaux." << endl << "Salaire horaire: " << s << " pesos" << endl << "Argent amasse: " << h * s << " pesos" << endl << "Total: " << _joueur._argent << endl << endl;
+					choix = 3;
 				}
 					
 				case 3:
 				{
-					cout << "Votre groupe installe un campement a l'ecart de la ville et y reste pour la nuit. Combien de rations de nourriture voulez-vous utiliser par personne? (" << n << " membres et " << _joueur._nourriture << " rations de nourriture" << endl;
+					cout << "Votre groupe installe un campement a l'ecart de la ville et y reste pour la nuit." << endl << "Combien de rations de nourriture voulez-vous utiliser par personne? (" << n << " membres et " << _joueur._nourriture << " rations de nourriture" << ")" << endl;
 					cin >> rations;
 					
 					_joueur._nourriture -= n * rations;

@@ -5,8 +5,6 @@
 #include "Ville.hpp"
 #include "Membre.hpp"
 
-using namespace std;
-
 class Joueur
 {
 	

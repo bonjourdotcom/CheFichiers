@@ -3,6 +3,8 @@
 #include <math.h>
 #include "Membre.hpp"
 
+using namespace std;
+
 Membre::Membre()
 {	
 	Effacer();

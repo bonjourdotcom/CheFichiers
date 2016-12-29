@@ -1,5 +1,7 @@
 #include "Ville.hpp"
 
+using namespace std;
+
 Ville::Ville()
 {
 	_nom = "";

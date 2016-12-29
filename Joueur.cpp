@@ -1,5 +1,7 @@
 #include "Joueur.hpp"
 
+using namespace std;
+
 Joueur::Joueur()
 {
 	_ville = new Ville();

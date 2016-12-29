@@ -4,17 +4,17 @@
 #include <iostream>
 #include <stdio.h>
 
-using namespace std;
-
 class Ville
 {
 public:
-	string _nom;
+	std::string _nom;
 	int _population;
-	string _type;
+	
+	Ville *_reliees[4];	//min: 1, max: 4
+	
 	bool _retrouvailles;
 	
-	Ville *_reliees[4];
+	std::string _type;
 	
 	Ville();
 	~Ville();
